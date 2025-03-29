@@ -1,70 +1,90 @@
-# Getting Started with Create React App
+# Let's Not Meet — Calendar Scheduler
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A privacy-focused calendar scheduling tool that lets you share your availability without revealing your actual calendar events. Perfect for coordinating meetings across different schedules while respecting everyone's privacy.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- View your calendar availability with 15-minute granularity
+- Set "absurd hours" that you never want to be available for meetings
+- Schedule with groups and see common availability
+- Privacy-focused: only shares free/busy information, not actual events
+- Test mode for trying the app without connecting to your real calendar
 
-### `npm start`
+## Setup Instructions
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Local Development
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clone the repository:
+   ```
+   git clone https://github.com/[YOUR_USERNAME]/letsnotmeet.git
+   cd letsnotmeet
+   ```
 
-### `npm test`
+2. Install dependencies:
+   ```
+   npm install
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Create a `.env` file with your Firebase configuration:
+   ```
+   # Copy the example file
+   cp .env.example .env
+   
+   # Edit with your Firebase details
+   nano .env
+   ```
 
-### `npm run build`
+4. Start the development server:
+   ```
+   npm start
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Firebase Setup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1. Create a Firebase project at [https://console.firebase.google.com/](https://console.firebase.google.com/)
+2. Enable Authentication with Google sign-in
+3. Set up Firestore database
+4. Add your Firebase project configuration to the `.env` file
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+To deploy to GitHub Pages:
 
-### `npm run build` fails to minify
+1. Update the `homepage` field in `package.json` with your GitHub username
+2. Install the gh-pages package:
+   ```
+   npm install --save-dev gh-pages
+   ```
+3. Deploy:
+   ```
+   npm run deploy
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Environment Variables
+
+The following environment variables need to be set in your `.env` file:
+
+```
+REACT_APP_FIREBASE_API_KEY=your_api_key_here
+REACT_APP_FIREBASE_AUTH_DOMAIN=your_auth_domain_here
+REACT_APP_FIREBASE_PROJECT_ID=your_project_id_here
+REACT_APP_FIREBASE_STORAGE_BUCKET=your_storage_bucket_here
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id_here
+REACT_APP_FIREBASE_APP_ID=your_app_id_here
+REACT_APP_FIREBASE_MEASUREMENT_ID=your_measurement_id_here
+```
+
+## Test Mode
+
+The app includes a test mode that can be enabled via the toggle in the header. This allows you to:
+
+- Test the interface without connecting to your real calendar
+- Add simulated participants to test group scheduling
+- Experiment with different availability patterns
+
+## Privacy Notes
+
+This application is designed with privacy in mind:
+- Only uses the minimum required scopes for Google Calendar
+- Only shares availability information, never event details
+- Your calendar events are never stored in our database
