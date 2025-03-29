@@ -2,6 +2,8 @@
 
 A privacy-focused calendar scheduling tool that lets you share your availability without revealing your actual calendar events. Perfect for coordinating meetings across different schedules while respecting everyone's privacy.
 
+I made this in one evening with Claude out of frustration with people not being able to arrange meetings. We get it. None of us want to meet anyway. Let's just use this to get it out of the way in the easiest way possible.
+
 ## Features
 
 - View your calendar availability with 15-minute granularity
@@ -16,7 +18,7 @@ A privacy-focused calendar scheduling tool that lets you share your availability
 
 1. Clone the repository:
    ```
-   git clone https://github.com/[YOUR_USERNAME]/letsnotmeet.git
+   git clone https://github.com/Ege-Cakar/letsnotmeet.git
    cd letsnotmeet
    ```
 
@@ -81,6 +83,8 @@ The app includes a test mode that can be enabled via the toggle in the header. T
 - Test the interface without connecting to your real calendar
 - Add simulated participants to test group scheduling
 - Experiment with different availability patterns
+
+This is left-over from development but I didn't see a reason to take it out for now. Might remove it in the future. 
 
 ## Privacy Notes
 
