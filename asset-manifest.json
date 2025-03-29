@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/letsnotmeet/static/css/main.9372038f.css",
+    "main.js": "/letsnotmeet/static/js/main.a2827e0f.js",
+    "index.html": "/letsnotmeet/index.html",
+    "main.9372038f.css.map": "/letsnotmeet/static/css/main.9372038f.css.map",
+    "main.a2827e0f.js.map": "/letsnotmeet/static/js/main.a2827e0f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9372038f.css",
+    "static/js/main.a2827e0f.js"
+  ]
+}
